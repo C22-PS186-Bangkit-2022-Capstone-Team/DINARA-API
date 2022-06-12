@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
     res.json({ status: "working properly!" });
 });
 
-app.get('/monument', (req, res) => {
+app.get('/monument', async (req, res) => {
     connection.query(
         "SELECT * FROM `dinaradb`.`monument`",
         (error, results, fields) => {
@@ -36,7 +36,6 @@ app.route("/monument/:id")
                 res.json(results);
             }
         );
-
     });
 
 
