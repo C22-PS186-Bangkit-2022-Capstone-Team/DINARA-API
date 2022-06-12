@@ -20,7 +20,7 @@ app.get("/", async (req, res) => {
 app.get('/monument', async (req, res) => {
     connection.query(
 
-        "SELECT * FROM `dinaradb1`.`monument`",
+        "SELECT * FROM `dinara_db`.`monument`",
         (error, results, fields) => {
             if (error) throw error;
             res.json(results);
@@ -32,7 +32,7 @@ app.get('/monument', async (req, res) => {
 app.route("/monument/:id")
     .get((req, res, next) => {
         connection.query(
-            "SELECT * FROM `dinaradb1`.`monument` WHERE id = ?", req.params.id,
+            "SELECT * FROM `dinara_db`.`monument` WHERE id = ?", req.params.id,
             (error, results, fields) => {
                 if (error) throw error;
                 res.json(results);
@@ -43,7 +43,7 @@ app.route("/monument/:id")
 app.route("/monument/nama")
     .get((req, res, next) => {
         connection.query(
-            "SELECT * FROM `dinaradb1`.`monument` WHERE nama = ?", req.params.id,
+            "SELECT * FROM `dinara_db`.`monument` WHERE nama = ?", req.params.id,
             (error, results, fields) => {
                 if (error) throw error;
                 res.json(results);
@@ -54,7 +54,7 @@ app.route("/monument/nama")
 app.route("/monument/nama")
     .get((req, res, next) => {
         connection.query(
-            "SELECT * FROM `dinaradb1`.`monument` WHERE nama = ?", req.params.id,
+            "SELECT * FROM `dinara_db`.`monument` WHERE nama = ?", req.params.id,
             (error, results, fields) => {
                 if (error) throw error;
                 res.json(results);
