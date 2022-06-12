@@ -18,13 +18,15 @@ app.get("/", async (req, res) => {
 });
 
 app.get('/monument', async (req, res) => {
-    connection.query(
-        "SELECT * FROM `dinaradb1`.`monument`",
-        (error, results, fields) => {
-            if (error) throw error;
-            res.json(results);
-        }
-    );
+    // connection.query(
+
+    //     "SELECT * FROM `dinaradb1`.`monument`",
+    //     (error, results, fields) => {
+    //         if (error) throw error;
+    //         res.json(results);
+    //     }
+    // );
+    res.send('hello');
 });
 
 app.route("/monument/:id")
