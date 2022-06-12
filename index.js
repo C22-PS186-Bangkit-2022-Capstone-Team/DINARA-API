@@ -49,4 +49,15 @@ app.route("/monument/nama")
         );
     });
 
+app.route("/monument/nama")
+    .get((req, res, next) => {
+        connection.query(
+            "SELECT * FROM `dinaradb1`.`monument` WHERE nama = ?", req.params.id,
+            (error, results, fields) => {
+                if (error) throw error;
+                res.json(results);
+            }
+        );
+    });
+
 
